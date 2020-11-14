@@ -9,7 +9,7 @@ ulaşabiliyor olması gerekir.
 
 ::
 
-   go get github.com/SeanTolstoyevski/talker
+   go get -tags bit64 github.com/SeanTolstoyevski/talker
 
 Herhangi bir çıktı görmediğinizde modül kurulmuş demektir.
 
