@@ -1,4 +1,5 @@
 version: 0.0.{build}
+image: Visual Studio 2019
 
 platform:
   - x64
@@ -12,7 +13,7 @@ clone_folder: c:\gopath\src\github.com\SeanTolstoyevski\talker
 
 environment:
   GOPATH: c:\gopath
-
+    
 init:
   - go version
 
