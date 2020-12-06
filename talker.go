@@ -29,7 +29,8 @@ import "C"
 
 	import "golang.org/x/sys/windows"
 
-// Convert UTF16 (wchar_t) c to GoString.  //  
+// Convert UTF16 (wchar_t) c to GoString.  
+//  
 //  You don't need to use it. Talker convert the strings you send to suitable formats.
 func WCharToString(p *C.wchar_t) string {
 	return windows.UTF16PtrToString((*uint16)(p))

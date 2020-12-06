@@ -5,9 +5,11 @@
 
 This Golang module is a Golang wrapper for [Tolk library](https://github.com/dkager/tolk).
 
+**Note**: **GCC** is required. CGO was used. Before installing, you must install GCC on your system.
+
 Available documentation:
 
-*  Active: [pkg.go.dev](https://pkg.go.dev/github.com/SeanTolstoyevski/talker)
+*  Active: [godoc.org](https://godoc.org/github.com/SeanTolstoyevski/talker)
 * I will continue to update:  [Turkish - Türkçe](https://github.com/SeanTolstoyevski/talker/blob/master/docs/README_tr.rst)
 
 ## İnstallation
