@@ -22,7 +22,7 @@ install:
   - go env
 
 build_script:
-  - choco instal nvda
+  - choco install NVDA
   - cmd: "C:\Program Files (x86)\NVDA\nvda_noUIAccess.exe"
   - go test .
   - cmd: cd examples
