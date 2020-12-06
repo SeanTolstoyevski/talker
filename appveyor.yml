@@ -24,8 +24,9 @@ install:
 build_script:
   - go test .
   - cmd: cd examples
-  - go build onlysapi.go
-  - go build getscreenreadername.go
-  - go build example1.go
-  - go build example2.go
+  - cmd: copy ..\lib\x64\*.dll .
+  - go build onlysapi.go && onlysapi.exe
+  - go build getscreenreadername.go && getscreenreadername.exe
+  - go build example1.go && example1.exe
+  - go build example2.go && example2.exe
 
