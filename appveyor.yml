@@ -17,11 +17,10 @@ environment:
       GOVERSION: 1.14
     - GO: "C:\\go113\\bin"
       GOVERSION: 1.13
-    - GO: "C:\\go112\\bin"
-      GOVERSION: 1.12
+
 
 init:
-  - go version
+  - %GO%\go.exe version
 
 
 install:
@@ -33,11 +32,11 @@ install:
   - go env
 
 build_script:
-  - go test .
+  - %GO%\go.exe test .
   - cmd: cd examples
   - cmd: copy ..\lib\x64\*.dll .
-  - go build onlysapi.go && onlysapi.exe
-  - go build getscreenreadername.go && getscreenreadername.exe
-  - go build example1.go && example1.exe
-  - go build example2.go && example2.exe
+  - %GO%\go.exe build onlysapi.go && onlysapi.exe
+  - %GO%\go.exe build getscreenreadername.go && getscreenreadername.exe
+  - %GO%\go.exe build example1.go && example1.exe
+  - %GO%\go.exe build example2.go && example2.exe
 
