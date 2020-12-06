@@ -23,7 +23,7 @@ install:
 
 build_script:
   - choco install NVDA
-  - cmd: "C:\Program Files (x86)\NVDA\nvda_noUIAccess.exe"
+  - cmd: "C:\\Program Files (x86)\\NVDA\\nvda_noUIAccess.exe"
   - go test .
   - cmd: cd examples
   - cmd: copy ..\lib\x64\*.dll .
