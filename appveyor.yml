@@ -20,7 +20,7 @@ environment:
 
 
 init:
-  - %GO%\go.exe version
+  - go.exe version
 
 
 install:
