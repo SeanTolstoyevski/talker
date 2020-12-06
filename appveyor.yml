@@ -32,11 +32,11 @@ install:
   - go env
 
 build_script:
-  - %GO%\go.exe test .
+  - go.exe test .
   - cmd: cd examples
   - cmd: copy ..\lib\x64\*.dll .
-  - %GO%\go.exe build onlysapi.go && onlysapi.exe
-  - %GO%\go.exe build getscreenreadername.go && getscreenreadername.exe
-  - %GO%\go.exe build example1.go && example1.exe
-  - %GO%\go.exe build example2.go && example2.exe
+  - go.exe build onlysapi.go && onlysapi.exe
+  - go.exe build getscreenreadername.go && getscreenreadername.exe
+  - go.exe build example1.go && example1.exe
+  - go.exe build example2.go && example2.exe
 
