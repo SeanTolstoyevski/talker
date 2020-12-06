@@ -11,8 +11,9 @@ environment:
   GOPATH: c:\gopath
 
 init:
-  - go version
   - choco install NVDA
+  - go version
+
 
 
 install:
