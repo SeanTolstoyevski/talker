@@ -13,14 +13,16 @@ environment:
   matrix:
     - GO: "c:\\go\\bin"
       GOVERSION: 15.5
+      ROOT: "c:\\go"
     - GO: "C:\\go114\\bin"
       GOVERSION: 1.14
+      ROOT: 
     - GO: "C:\\go113\\bin"
       GOVERSION: 1.13
 
 
 init:
-  - go.exe version
+  - "%GO%\\go.exe version"
 
 
 install:
@@ -29,10 +31,10 @@ install:
   - set PATH=C:\mymingw64\mingw64\bin;%PATH%
   - echo %GOPATH%
   - set PATH=%GOPATH%\bin;%GO%;%PATH%
-  - go env
+  - "%GO%\\go.exe env"
 
 build_script:
-  - go.exe test .
+  - "%GO%\\go.exe test ."
   - cmd: cd examples
   - cmd: copy ..\lib\x64\*.dll .
   - go.exe build onlysapi.go && onlysapi.exe
