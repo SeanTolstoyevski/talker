@@ -12,13 +12,13 @@ environment:
   GOPATH: c:\gopath
   matrix:
     - GO: "c:\\go\\bin"
-      - GOVERSION: 15.5
+      GOVERSION: 15.5
     - GO: "C:\\go114\\bin"
-      - GOVERSION: 1.14
+      GOVERSION: 1.14
     - GO: "C:\\go113\\bin"
-      - GOVERSION: 1.13
+      GOVERSION: 1.13
     - GO: "C:\\go112\\bin"
-      - GOVERSION: 1.12
+      GOVERSION: 1.12
 
 init:
   - go version
