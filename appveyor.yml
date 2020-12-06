@@ -2,6 +2,8 @@ version: 0.0.{build}
 
 clone_folder: c:\gopath\src\github.com\SeanTolstoyevski\talker
 
+stack: go 1.12
+
 branches:
   only:
     - master
