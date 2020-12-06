@@ -13,7 +13,6 @@ environment:
 init:
   - go version
   - choco install NVDA
-  - cmd: '"C:\\Program Files (x86)\\NVDA\\nvda.exe"'
 
 
 install:
