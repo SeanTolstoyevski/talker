@@ -11,11 +11,11 @@ branches:
 environment:
   GOPATH: c:\gopath
   matrix:
-    - GO: "c:\\go\"
+    - GO: "c:\\go"
       GOVERSION: 15.5
-    - GO: "C:\\go114\"
+    - GO: "C:\\go114"
       GOVERSION: 1.14
-    - GO: "C:\\go113\"
+    - GO: "C:\\go113"
       GOVERSION: 1.13
 
 
