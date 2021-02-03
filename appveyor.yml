@@ -25,7 +25,7 @@ init:
 
 install:
   - curl -LJO -o "C:\mingw-w64.7z" "https://github.com/brechtsanders/winlibs_mingw/releases/download/10.2.0-11.0.0-8.0.0-r7/winlibs-x86_64-posix-seh-gcc-10.2.0-llvm-11.0.0-mingw-w64-8.0.0-r7.7z"
-  - 7z x -oC:\mymingw64 C:\mingw-w64.7z
+  - 7z x -oC:\mymingw64 winlibs-x86_64-posix-seh-gcc-10.2.0-llvm-11.0.0-mingw-w64-8.0.0-r7.7z
   - set PATH=C:\mymingw64\mingw64\bin;%PATH%
   - set GOROOT="%GO%"
   - set GOTOOLDIR="%GO%\pkg\tool\windows_amd64"
