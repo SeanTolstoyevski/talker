@@ -1,4 +1,11 @@
-//Talker is a wrapper for the Tolk library.  
+// Copyright (C) 2020, 2021 SeanTolstoyevski - mailto:seantolstoyevski@protonmail.com
+//
+// The source code of this project is licensed under the MIT license.
+// But this package has dependencies licensed with different licenses.
+// You can find the license on the repo's main folder.
+// Provided without warranty of any kind.
+
+// Package talker is a wrapper for the Tolk library.  
 //  
 // It processes the API of many screen readers in a single API.  
 // You don't need to be particularly concerned with any low-level functions.  
@@ -29,22 +36,22 @@ import "C"
 
 	import "golang.org/x/sys/windows"
 
-// Convert UTF16 (wchar_t) c to GoString.  
+// wCharToString convert UTF16 (wchar_t) c to GoString.  
 //  
 //  You don't need to use it. Talker convert the strings you send to suitable formats.
-func WCharToString(p *C.wchar_t) string {
+func wCharToString(p *C.wchar_t) string {
 	return windows.UTF16PtrToString((*uint16)(p))
 }
 
-// Convert go string  c to wchar_t.  
+// stringToWchart convert go string  c to wchar_t.  
 //  
 // You don't need to use it.
-func StringToWchart(s string) (*C.wchar_t, error) {
+func stringToWchart(s string) (*C.wchar_t, error) {
 	p, err := windows.UTF16PtrFromString(s)
 	return (*C.wchar_t)(p), err
 }
 
-// Load Talker. When you're done, you should call Unload.  
+// Load load Talker. When you're done, you should call Unload.  
 //  
 // C Description: Initializes Tolk by loading and initializing the screen reader drivers and setting the current screen reader driver, provided at least one of the supported screen readers is active. Also initializes COM if it has not already been initialized on the calling thread. Calling this function more than once will only initialize COM. You should call this function before using the functions below.  
 //  
@@ -53,7 +60,7 @@ func Load() {
 C.Tolk_Load()
 }
 
-// Release Talker's resource. You should call it, if finished  you're transactions.  
+// Unload release Talker's resource. You should call it, if finished  you're transactions.  
 //  
 // Like exiting the program. You shouldn't use it with  expression like Defer. Because you have to load (Load()) it again.
 //  
@@ -62,7 +69,7 @@ func Unload() {
 	C.Tolk_Unload()
 }
 
-//Returns whether Talker is loaded. True if loaded, false otherwise. 
+// IsLoaded returns whether Talker is loaded. True if loaded, false otherwise. 
 //  
 // C Description: Tests if Tolk has been initialized.
 func IsLoaded() bool {
@@ -84,15 +91,15 @@ func PreferSAPI(yesno bool) {
 	C.Tolk_PreferSAPI(C.bool(yesno))
 }
 
-// Returns name of current screen reader. Like NVDA, JAWS...
+// DetectScreenReader returns name of current screen reader. Like NVDA, JAWS...
 //  
 // C Description:  Returns the common name for the currently active screen reader driver, if one is set. If none is set, tries to detect the currently active screen reader before looking up the name. If no screen reader is active, NULL is returned. Note that the drivers hard-code the common name, it is not requested from the screen reader itself.  
 // You should call Load once before using this function.
 func DetectScreenReader() string {
-	return WCharToString(C.Tolk_DetectScreenReader())
+	return wCharToString(C.Tolk_DetectScreenReader())
 }
 
-// Sends text to be speaking  to the current screen reader. If "interrupt" is True, the current speak is interrupt.
+// Output sends text to be speaking  to the current screen reader. If "interrupt" is True, the current speak is interrupt.
 //  
 // Users generally do not like to interrupt their existing speaking.
 //  
@@ -102,7 +109,7 @@ func DetectScreenReader() string {
 //  
 // This function is asynchronous.
 func Output(text string, interrupt bool) (bool, error) {
-	wcharstr, err := StringToWchart(text)
+	wcharstr, err := stringToWchart(text)
 	if err != nil {
 		return false, err
 		}
@@ -127,7 +134,7 @@ func HasBraille() bool {
 //  
 // You should call Load once before using this function. This function is asynchronous.
 func Speak(value string, interrupt bool) bool {
-	v, err := StringToWchart(value)
+	v, err := stringToWchart(value)
 	if err != nil {
 		return false
 		}
@@ -138,7 +145,7 @@ func Speak(value string, interrupt bool) bool {
 //  
 // You should call Load once before using this function.
 func Braille(value string) bool {
-	v, err := StringToWchart(value)
+	v, err := stringToWchart(value)
 	if err != nil {
 		return false
 		}
