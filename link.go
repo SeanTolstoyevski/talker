@@ -7,6 +7,8 @@
 
 package talker
 
-//#cgo windows  CFLAGS: -O1 -Iinclude
-//#cgo windows  LDFLAGS: -Llib/x64 -lTolk
+//#cgo windows CFLAGS: -Iinclude
+//#cgo windows LDFLAGS: -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
+//#cgo windows,386 LDFLAGS: -Llib/x86 -lTolk
+//#cgo windows,amd64 LDFLAGS: -Llib/x64 -lTolk
 import "C"
