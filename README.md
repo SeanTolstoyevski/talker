@@ -1,6 +1,6 @@
 # talker – Golang wrapper for Tolk library
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/SeanTolstoyevski/talker@master.svg)](https://pkg.go.dev/github.com/SeanTolstoyevski/talker@master)
+[![Go Reference](https://pkg.go.dev/badge/github.com/SeanTolstoyevski/talker@master.svg)](https://pkg.go.dev/github.com/SeanTolstoyevski/talker@master?GOOS=windows)
 
 ## Welcome to Talker's Repo!
 
