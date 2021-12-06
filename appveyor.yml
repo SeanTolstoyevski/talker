@@ -2,26 +2,19 @@ version: 0.0.{build}
 
 clone_folder: c:\gopath\src\github.com\SeanTolstoyevski\talker
 
-
 branches:
   only:
     - master
-
 
 environment:
   GOPATH: C:\gopath
   matrix:
     - GO: "c:\\go"
-      GOVERSION: 15.5
     - GO: "C:\\go114"
-      GOVERSION: 1.14
     - GO: "C:\\go113"
-      GOVERSION: 1.13
-
 
 init:
   - "%GO%\\bin\\go.exe version"
-
 
 install:
   - curl -LJO -o "C:\mingw-w64.7z" "https://github.com/brechtsanders/winlibs_mingw/releases/download/10.2.0-11.0.0-8.0.0-r7/winlibs-x86_64-posix-seh-gcc-10.2.0-llvm-11.0.0-mingw-w64-8.0.0-r7.7z"
