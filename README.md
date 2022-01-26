@@ -10,7 +10,7 @@ No changes have been made to the use  API.
 Only utf-8/ utf-16 conversions is automatically.
 You do not need to do these conversions.
 
-You can check the (examples folder)[https://github.com/SeanTolstoyevski/talker/tree/master/examples/] to see more stuff.
+You can check the [examples folder](https://github.com/SeanTolstoyevski/talker/tree/master/examples/) to see more stuff.
 
 ## İnstallation
 
