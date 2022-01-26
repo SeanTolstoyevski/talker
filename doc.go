@@ -27,4 +27,3 @@
 //
 // You must copy the appropriate DLLs for your architecture from x64 or x86 to your project directory. And license files (LICENSE-NVDA.txt, LICENSE_tolk.txt) :)
 package talker
-

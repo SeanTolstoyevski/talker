@@ -10,6 +10,8 @@ environment:
   GOPATH: C:\gopath
   matrix:
     - GO: "c:\\go"
+    - GO: "C:\\go116"
+    - GO: "C:\\go115"
     - GO: "C:\\go114"
     - GO: "C:\\go113"
 
@@ -17,15 +19,13 @@ init:
   - "%GO%\\bin\\go.exe version"
 
 install:
-  - curl -LJO -o "C:\mingw-w64.7z" "https://github.com/brechtsanders/winlibs_mingw/releases/download/10.2.0-11.0.0-8.0.0-r7/winlibs-x86_64-posix-seh-gcc-10.2.0-llvm-11.0.0-mingw-w64-8.0.0-r7.7z"
-  - 7z x -oC:\mymingw64 winlibs-x86_64-posix-seh-gcc-10.2.0-llvm-11.0.0-mingw-w64-8.0.0-r7.7z
-  - set PATH=C:\mymingw64\mingw64\bin;%PATH%
   - set GOROOT=%GO%
   - set GOTOOLDIR=%GO%\pkg\tool\windows_amd64
   - "%GO%\\bin\\go.exe env"
 
 build_script:
-  - "%GO%\\bin\\go.exe test ."
+  - "%GO%\\bin\\go.exe vet ."
+  - "%GO%\\bin\\go.exe build ."
   - cmd: cd examples
   - cmd: copy ..\lib\x64\*.dll .
   - "%GO%\\bin\\go.exe build onlysapi.go && onlysapi.exe"

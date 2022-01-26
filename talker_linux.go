@@ -1,3 +1,4 @@
+//go:build linux || !windows
 // +build linux !windows
 
 // Copyright (C) 2020, 2021 SeanTolstoyevski - mailto:seantolstoyevski@protonmail.com
@@ -30,8 +31,7 @@
 // You must copy the appropriate DLLs for your architecture from x64 or x86 to your project directory. And license files (LICENSE-NVDA.txt, LICENSE_tolk.txt) :)
 package talker
 
-
-// DetectScreenReader 
+// DetectScreenReader
 func DetectScreenReader() string {
 	return ""
 }
