@@ -99,6 +99,9 @@ func PreferSAPI(yesno bool) {
 // You should call Load once before using this function.
 func DetectScreenReader() string {
 	r, _, _ := procDetectScreenReaderTolk.Call()
+	if r == 0 {
+		return ""
+	}
 	v := *(*[]uint16)(unsafe.Pointer(&r))
 	return syscall.UTF16ToString(v)
 }
